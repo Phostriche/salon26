@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+	Liste des produits
+{% endblock %}
+
+{% block body %}
+	<style>
+		.example-wrapper {
+			margin: 1em auto;
+			max-width: 800px;
+			width: 95%;
+			font: 18px / 1.5 sans-serif;
+		}
+		.example-wrapper code {
+			background: #F5F5F5;
+			padding: 2px 6px;
+		}
+	</style>
+	<div class="example-wrapper">
+		<h1>Liste des produits</h1>
+		<ul class="list-group list-group-flush">
+			{% for prod in produit %}
+				<div class="card mb-1">
+					<div class="card-body">
+						<div class="card-title d-flex justify-content-between">
+							<h4 class="mb-1">{{ prod.nom }}</h4>
+							<small class="text-muted">prix :
+								{{prod.prixVente }}</small>
+						</div>
+					</div>
+				</div>
+			{% endfor %}
+		</ul>
+	</div>
+{% endblock %}
